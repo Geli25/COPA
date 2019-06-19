@@ -1457,6 +1457,7 @@ GameObject:
   - component: {fileID: 1544722907}
   - component: {fileID: 1544722906}
   - component: {fileID: 1544722905}
+  - component: {fileID: 1544722913}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: projector
@@ -1471,8 +1472,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1544722903}
-  m_LocalRotation: {x: -0, y: -0, z: -0.15134712, w: 0.9884807}
-  m_LocalPosition: {x: 1.165, y: -0.144, z: 1.9578066}
+  m_LocalRotation: {x: 0, y: 0, z: -0.15134712, w: 0.9884807}
+  m_LocalPosition: {x: 1.251, y: -0.144, z: 1.9578066}
   m_LocalScale: {x: 0.1376, y: 0.059999995, z: 0.1696}
   m_Children:
   - {fileID: 1624216069}
@@ -1655,6 +1656,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1544722903}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1544722913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1544722903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8bb65dc0fbf07244958e84f9265eaea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LeftPointer: {fileID: 2069236343}
 --- !u!1 &1565561800
 GameObject:
   m_ObjectHideFlags: 0

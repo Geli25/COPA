@@ -1137,24 +1137,7 @@ namespace VRTK
             {
                 secondaryGrabActionScript.ProcessUpdate();
             }
-
-
-            //can be in separate script
-            //changing the projector angle interaction
-            /*
-            if (pointer.pointerRenderer.GetDestinationHit().collider.tag == "projector")
-            {
-                if (tag == "projector")
-                {
-                    if (OVRInput.Get(OVRInput.Axis2D.SecondaryThumbstick) != null)
-                    {
-                        float horizontalInput = OVRInput.Get(OVRInput.Axis2D.SecondaryThumbstick).x;
-                        transform.eulerAngles += new Vector3(0, horizontalInput * Time.deltaTime, 0);
-                    }
-                }
-            }
-            */
-
+           
         }
 
         /// <summary>
