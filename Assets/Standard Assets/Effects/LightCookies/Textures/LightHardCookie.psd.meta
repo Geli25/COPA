@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b1d7fee26e54cc3498f6267f072a45b9
+guid: 1167c0a28d11119930004d8a4241aa39
 TextureImporter:
   fileIDToRecycleName: {}
   serializedVersion: 2
@@ -10,26 +10,26 @@ TextureImporter:
     correctGamma: 0
     fadeOut: 0
     borderMipMap: 1
-    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceStart: 2
     mipMapFadeDistanceEnd: 3
   bumpmap:
     convertToNormalMap: 0
     externalNormalMap: 0
-    heightScale: .25
+    heightScale: .100000001
     normalMapFilter: 0
   isReadable: 0
-  grayScaleToAlpha: 0
+  grayScaleToAlpha: 1
   generateCubemap: 0
   cubemapConvolution: 0
   cubemapConvolutionSteps: 8
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
-  textureFormat: -3
-  maxTextureSize: 64
+  textureFormat: -1
+  maxTextureSize: 512
   textureSettings:
-    filterMode: -1
-    aniso: -1
-    mipBias: -1
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
     wrapMode: 1
   nPOTScale: 1
   lightmap: 0
@@ -44,7 +44,23 @@ TextureImporter:
   spritePixelsToUnits: 100
   alphaIsTransparency: 0
   textureType: 5
-  buildTargetSettings: []
+  buildTargetSettings:
+  - buildTarget: iPhone
+    maxTextureSize: 128
+    textureFormat: 33
+    compressionQuality: 50
+  - buildTarget: Android
+    maxTextureSize: 128
+    textureFormat: 13
+    compressionQuality: 50
+  - buildTarget: BlackBerry
+    maxTextureSize: 128
+    textureFormat: 13
+    compressionQuality: 50
+  - buildTarget: WP8
+    maxTextureSize: 128
+    textureFormat: 12
+    compressionQuality: 50
   spriteSheet:
     sprites: []
   spritePackingTag: 

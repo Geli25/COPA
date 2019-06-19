@@ -1270,9 +1270,14 @@ namespace VRTK
             }
 
             //custom grab action
-            if (tag == "projector" || tag == "person")
+            if (tag == "person")
             {
                 transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+                transform.eulerAngles = new Vector3(0, 0, 0);
+            }
+            else if (tag == "projector")
+            {
+                transform.localScale = new Vector3(0.011f, 0.09f, 0.012f);
                 transform.eulerAngles = new Vector3(0, 0, 0);
             }
         }
@@ -1329,8 +1334,8 @@ namespace VRTK
                         previousSecondaryGrabbingObject.GetComponentInChildren<VRTK_InteractGrab>().ForceRelease();
                     }
                     transform.localScale = new Vector3(0.344f, 0.15f, 0.424f);
-                    transform.position = new Vector3(pointer.pointerRenderer.GetDestinationHit().point.x, 4.38f, pointer.pointerRenderer.GetDestinationHit().point.z);
-                    transform.eulerAngles = new Vector3(0, 0, 0);
+                    transform.position = new Vector3(pointer.pointerRenderer.GetDestinationHit().point.x, 4.35f, pointer.pointerRenderer.GetDestinationHit().point.z);
+                    transform.eulerAngles = new Vector3(0, 0, -17.41f);
                     LoadPreviousState();
                     //set parent to ceiling when projector is placed, so that it will stay intact when the ceiling is being adjusted
                 }
