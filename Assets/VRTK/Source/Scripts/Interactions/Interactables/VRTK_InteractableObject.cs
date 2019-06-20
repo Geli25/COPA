@@ -74,6 +74,7 @@ namespace VRTK
 
         public GameObject pointerObject;
         float previousScale;
+        float previousRot;
 
         void Start()
         {
@@ -1256,13 +1257,13 @@ namespace VRTK
             //custom grab action
             if (tag == "person")
             {
-                //need to remember previousScale;
                 previousScale = transform.localScale.y; 
                 transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
                 transform.eulerAngles = new Vector3(0, 0, 0);
             }
             else if (tag == "projector")
             {
+                previousRot = transform.eulerAngles.y;
                 transform.localScale = new Vector3(0.011f, 0.09f, 0.012f);
                 transform.eulerAngles = new Vector3(0, 0, 0);
             }
@@ -1321,7 +1322,7 @@ namespace VRTK
                     }
                     transform.localScale = new Vector3(0.344f, 0.15f, 0.424f);
                     transform.position = new Vector3(pointer.pointerRenderer.GetDestinationHit().point.x, 4.25f, pointer.pointerRenderer.GetDestinationHit().point.z);
-                    transform.eulerAngles = new Vector3(0, 0, -17.41f);
+                    transform.eulerAngles = new Vector3(0, previousRot, -17.83f);
                     LoadPreviousState();
                 }
                 else

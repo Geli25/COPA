@@ -19,9 +19,9 @@ public class addRemoveObjects : MonoBehaviour
     {
         pointer = GetComponent<VRTK_Pointer>();
         personHeights =new float[3];
-        personHeights[0] = 0.5f;
-        personHeights[1] = 0.7f;
-        personHeights[2] = 0.9f;
+        personHeights[0] = 0.7f;
+        personHeights[1] = 0.9f;
+        personHeights[2] = 0.5f;
     }
 
     // Update is called once per frame
@@ -49,7 +49,7 @@ public class addRemoveObjects : MonoBehaviour
             {
                 if (OVRInput.GetDown(OVRInput.Button.Four))
                 {
-                    GameObject newProjector=Instantiate(projector, new Vector3(pointer.pointerRenderer.GetDestinationHit().point.x, 4.25f, pointer.pointerRenderer.GetDestinationHit().point.z), Quaternion.Euler(0,0, -17.41f));
+                    GameObject newProjector=Instantiate(projector, new Vector3(pointer.pointerRenderer.GetDestinationHit().point.x, 4.25f, pointer.pointerRenderer.GetDestinationHit().point.z), Quaternion.Euler(0,0, -17.83f));
                     newProjector.transform.parent = parentCeiling.transform;
                 }
                 else
