@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using VRTK;
 
-public class pointerInteractions : MonoBehaviour
+public class addRemoveObjects : MonoBehaviour
 {
     VRTK_Pointer pointer;
     public GameObject person;
@@ -11,10 +11,17 @@ public class pointerInteractions : MonoBehaviour
     public GameObject parentWorld;
     public GameObject parentCeiling;
 
+    float[] personHeights;
+    int counter = 0;
+
     // Start is called before the first frame update
     void Start()
     {
         pointer = GetComponent<VRTK_Pointer>();
+        personHeights =new float[3];
+        personHeights[0] = 0.5f;
+        personHeights[1] = 0.7f;
+        personHeights[2] = 0.9f;
     }
 
     // Update is called once per frame
@@ -57,7 +64,24 @@ public class pointerInteractions : MonoBehaviour
                 {
                     Destroy(pointer.pointerRenderer.GetDestinationHit().transform.gameObject);
                 }
+
+                //toggle person height
+                if (pointer.pointerRenderer.GetDestinationHit().collider.tag == "person")
+                {
+                    if (OVRInput.GetDown(OVRInput.Button.PrimaryThumbstick))
+                    {
+                        if (counter > 2)
+                        {
+                            counter = 0;
+                        }
+                        Debug.Log(counter);
+                        GameObject personObject = pointer.pointerRenderer.GetDestinationHit().transform.gameObject;
+                        personObject.transform.localScale = new Vector3(personObject.transform.localScale.x, personHeights[counter], personObject.transform.localScale.z);
+                        counter += 1;
+                    }
+                }
             }
+
         }
     }
 }
