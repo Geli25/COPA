@@ -20,7 +20,10 @@ public class rotateProjector : MonoBehaviour
         selected = true;
         selectedName = name;
         selectedObject = chosenObject;
-        selectedObject.GetComponent<Renderer>().material.color = Color.blue;
+        if (name == "projector")
+        {
+            selectedObject.GetComponent<Renderer>().material.color = Color.blue;
+        }
     }
 
     void reSelectObject(GameObject chosenObject, string name)
@@ -47,7 +50,7 @@ public class rotateProjector : MonoBehaviour
                 }
             }
 
-            /*
+            
             //ceiling selection
             if (pointer.pointerRenderer.GetDestinationHit().collider.gameObject.name == "Ceiling")
             {
@@ -61,7 +64,7 @@ public class rotateProjector : MonoBehaviour
                     reSelectObject(pointer.pointerRenderer.GetDestinationHit().transform.gameObject, "ceiling");
                 }
             }
-            */
+            
             
 
         }

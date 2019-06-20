@@ -49,7 +49,7 @@ public class addRemoveObjects : MonoBehaviour
             {
                 if (OVRInput.GetDown(OVRInput.Button.Four))
                 {
-                    GameObject newProjector=Instantiate(projector, new Vector3(pointer.pointerRenderer.GetDestinationHit().point.x, 4.38f, pointer.pointerRenderer.GetDestinationHit().point.z), Quaternion.Euler(0,0, -17.41f));
+                    GameObject newProjector=Instantiate(projector, new Vector3(pointer.pointerRenderer.GetDestinationHit().point.x, 4.25f, pointer.pointerRenderer.GetDestinationHit().point.z), Quaternion.Euler(0,0, -17.41f));
                     newProjector.transform.parent = parentCeiling.transform;
                 }
                 else

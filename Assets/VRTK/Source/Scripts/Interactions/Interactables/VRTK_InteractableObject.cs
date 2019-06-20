@@ -73,6 +73,7 @@ namespace VRTK
         /// 
 
         public GameObject pointerObject;
+        float previousScale;
 
         void Start()
         {
@@ -1256,6 +1257,7 @@ namespace VRTK
             if (tag == "person")
             {
                 //need to remember previousScale;
+                previousScale = transform.localScale.y; 
                 transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
                 transform.eulerAngles = new Vector3(0, 0, 0);
             }
@@ -1294,7 +1296,7 @@ namespace VRTK
                         secondaryGrabActionScript.OnDropAction();
                         previousSecondaryGrabbingObject.GetComponentInChildren<VRTK_InteractGrab>().ForceRelease();
                     }
-                    transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+                    transform.localScale = new Vector3(0.5f, previousScale, 0.5f);
                     transform.position = new Vector3(pointer.pointerRenderer.GetDestinationHit().point.x, 0.54f, pointer.pointerRenderer.GetDestinationHit().point.z);
                     transform.eulerAngles = new Vector3(0, 0, 0);
                     LoadPreviousState();
@@ -1318,10 +1320,9 @@ namespace VRTK
                         previousSecondaryGrabbingObject.GetComponentInChildren<VRTK_InteractGrab>().ForceRelease();
                     }
                     transform.localScale = new Vector3(0.344f, 0.15f, 0.424f);
-                    transform.position = new Vector3(pointer.pointerRenderer.GetDestinationHit().point.x, 4.28f, pointer.pointerRenderer.GetDestinationHit().point.z);
+                    transform.position = new Vector3(pointer.pointerRenderer.GetDestinationHit().point.x, 4.25f, pointer.pointerRenderer.GetDestinationHit().point.z);
                     transform.eulerAngles = new Vector3(0, 0, -17.41f);
                     LoadPreviousState();
-                    //set parent to ceiling when projector is placed, so that it will stay intact when the ceiling is being adjusted
                 }
                 else
                 {
