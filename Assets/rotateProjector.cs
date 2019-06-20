@@ -20,10 +20,7 @@ public class rotateProjector : MonoBehaviour
         selected = true;
         selectedName = name;
         selectedObject = chosenObject;
-        if (name == "projector")
-        {
-            selectedObject.GetComponent<Renderer>().material.color = Color.blue;
-        }
+        selectedObject.GetComponent<Renderer>().material.color = Color.blue;
     }
 
     void reSelectObject(GameObject chosenObject, string name)
@@ -93,33 +90,42 @@ public class rotateProjector : MonoBehaviour
             if (selectedName == "projector")
             {
                 selectedObject.GetComponent<Renderer>().material.color = Color.blue;
-                if (OVRInput.Get(OVRInput.Axis2D.SecondaryThumbstick) != null)
+                if (OVRInput.Get(OVRInput.Axis2D.SecondaryThumbstick).x != 0)
                 {
                     float horizontalInput = OVRInput.Get(OVRInput.Axis2D.SecondaryThumbstick).x;
                     selectedObject.transform.eulerAngles += new Vector3(0, horizontalInput, 0);
                 }
             }
 
-            /*
+            
             //adjust ceiling height
             else if (selectedName == "ceiling")
             {
-                if (OVRInput.Get(OVRInput.Axis2D.SecondaryThumbstick) != null)
+                if (OVRInput.Get(OVRInput.Axis2D.SecondaryThumbstick).y != 0)
                 {
                     float verticalInput = OVRInput.Get(OVRInput.Axis2D.SecondaryThumbstick).y;
-                    selectedObject.transform.position += new Vector3(selectedObject.transform.position.x, verticalInput*0.1f, selectedObject.transform.position.z);
-                    if (selectedObject.transform.position.y > 10.7f)
+                    Debug.Log("it's working");
+                    selectedObject.transform.position += new Vector3(0, verticalInput*0.01f, 0);
+
+
+                    /*
+
+                    if (selectedObject.transform.localPosition.y > 4.7028f)
                     {
-                        selectedObject.transform.position = new Vector3(selectedObject.transform.position.x, 10.7f, selectedObject.transform.position.z);
+                        selectedObject.transform.position = new Vector3(selectedObject.transform.position.x, 4.7027f, selectedObject.transform.position.z);
                     }
-                    else if (selectedObject.transform.position.y < 9.5f)
+
+                    
+                    else if (selectedObject.transform.position.y < 2.5026f)
                     {
-                        selectedObject.transform.position = new Vector3(selectedObject.transform.position.x, 7.89f, selectedObject.transform.position.z);
+                        selectedObject.transform.position = new Vector3(selectedObject.transform.position.x, 2.5027f, selectedObject.transform.position.z);
                     }
+                    */
+                   
 
                 }
             }
-            */
+            
             else { return; }
 
         }
