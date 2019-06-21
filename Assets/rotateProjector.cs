@@ -107,10 +107,8 @@ public class rotateProjector : MonoBehaviour
                     Debug.Log("it's working");
                     selectedObject.transform.position += new Vector3(0, verticalInput*0.01f, 0);
 
-
-                    /*
-
-                    if (selectedObject.transform.localPosition.y > 4.7028f)
+                 
+                    if (selectedObject.transform.position.y > 4.7028f)
                     {
                         selectedObject.transform.position = new Vector3(selectedObject.transform.position.x, 4.7027f, selectedObject.transform.position.z);
                     }
@@ -120,7 +118,7 @@ public class rotateProjector : MonoBehaviour
                     {
                         selectedObject.transform.position = new Vector3(selectedObject.transform.position.x, 2.5027f, selectedObject.transform.position.z);
                     }
-                    */
+                    
                    
 
                 }
