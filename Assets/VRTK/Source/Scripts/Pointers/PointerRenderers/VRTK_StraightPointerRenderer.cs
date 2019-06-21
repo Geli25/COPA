@@ -52,6 +52,8 @@ namespace VRTK
 
         protected Vector3 cursorOriginalScale = Vector3.one;
 
+        public Transform accessOrigin;
+
         /// <summary>
         /// The UpdateRenderer method is used to run an Update routine on the pointer.
         /// </summary>
@@ -198,6 +200,7 @@ namespace VRTK
         protected virtual float CastRayForward()
         {
             Transform origin = GetOrigin();
+            accessOrigin = GetOrigin();
             Ray pointerRaycast = new Ray(origin.position, origin.forward);
             RaycastHit pointerCollidedWith;
             bool rayHit = VRTK_CustomRaycast.Raycast(customRaycast, pointerRaycast, out pointerCollidedWith, defaultIgnoreLayer, maximumLength);
