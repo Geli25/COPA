@@ -28,3 +28,5 @@ X: Instantiate new person at pointer location
 
 Y: Instantiate new projector at pointer location
 
+Menu: Reset world
+
