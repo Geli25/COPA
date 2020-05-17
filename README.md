@@ -18,7 +18,7 @@ A: (When pointing at a "person") Switch person (Adult, teen, child)
 
 <br />
 
-***Left Controller*** (not yet implemented):
+***Left Controller***
 
 Grip: Activate pointer
 
